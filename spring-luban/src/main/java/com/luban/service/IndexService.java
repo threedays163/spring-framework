@@ -1,38 +1,30 @@
 package com.luban.service;
 
-import com.luban.annoation.MyAnnotation;
+import com.luban.dto.A;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.DependsOn;
+import org.springframework.stereotype.Component;
 
-import java.lang.reflect.Field;
-
+/**
+ * @DepensOn 表示IndexService的初始化要在UserService之后
+ */
+@Component
+@DependsOn("userService")
 public class IndexService {
 
-	@MyAnnotation
-	UserService userService;
+	@Autowired
+	A a;
 
-	public void aaaa(){
-		userService.print();
+	public IndexService(){
+		System.out.println("indexService init");
 	}
 
-	/**
-	 * 自定义注解处理示例
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		IndexService indexService=new IndexService();
+	@Autowired
+	Services service1;
 
-		Class<IndexService> indexServiceClass=IndexService.class;
-
-		try {
-			Field field =indexServiceClass.getDeclaredField("userService");
-			if(field.getDeclaredAnnotation(MyAnnotation.class)!=null){
-				field.setAccessible(true);
-				field.set(indexService, new UserService());
-			}
-			indexService.aaaa();
-		} catch (NoSuchFieldException e) {
-			e.printStackTrace();
-		} catch (IllegalAccessException e) {
-			e.printStackTrace();
-		}
+	public void printA(){
+		a.print();
 	}
+
+
 }

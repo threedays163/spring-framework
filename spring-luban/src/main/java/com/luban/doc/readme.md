@@ -54,3 +54,7 @@ bean Scope:
 ### 容器 Lifecycle机制
   
   Lifecycle接口提供容器启动,关闭的回调方法
+  
+### FactoryBean 和 Bean的区别
+  初始化的时机不同
+  

@@ -1,6 +1,7 @@
 package com.luban.test;
 
 import com.luban.app.Appconfig;
+import com.luban.service.IndexService;
 import com.luban.service.LubanService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -16,6 +17,7 @@ public class Test {
 
 		context.getBean(LubanService.class).xx();
 
+		context.getBean(IndexService.class).printA();
 		context.close();
 	}
 }

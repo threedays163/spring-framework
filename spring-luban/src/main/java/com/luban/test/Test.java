@@ -13,6 +13,7 @@ public class Test {
 		//ClassPathXmlApplicationContext context=new ClassPathXmlApplicationContext("classpath:spring.xml");
 
 		AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext(Appconfig.class);
+
 		context.getBean(LubanService.class).xx();
 
 		context.close();

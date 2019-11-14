@@ -5,15 +5,15 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 
-@Service("zlService")
-public class ZlService implements Zl{
+@Service("zlService1")
+public class ZlService1 implements Zl {
 
-	public ZlService(){
-		System.out.println("ZlService construct");
+	public ZlService1(){
+		System.out.println("ZlService1 construct");
 	}
 
 	@PostConstruct
 	public void init(){
-		System.out.println("ZlService postConstruct");
+		System.out.println("ZlService1 postConstruct");
 	}
 }

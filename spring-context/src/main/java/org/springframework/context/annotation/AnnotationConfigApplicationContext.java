@@ -85,6 +85,7 @@ public class AnnotationConfigApplicationContext extends GenericApplicationContex
 	 */
 	public AnnotationConfigApplicationContext(Class<?>... componentClasses) {
 		this();
+		// beanDefinitionMap.put("appconfig",bean)
 		register(componentClasses);
 		refresh();
 	}
